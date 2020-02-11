@@ -9,3 +9,6 @@ read -p " Enter the number for c : " input3
 
 # FIRST COMPUTATION FOR [ a + b * c ]
 result1=`echo "scale=2; $input1 + $input2 * $input3" | bc`
+
+# SECOND COMPUTATION FOR [ a * b + c ]
+result2=`echo "scale=2; $input1 * $input2 + $input3" | bc`
