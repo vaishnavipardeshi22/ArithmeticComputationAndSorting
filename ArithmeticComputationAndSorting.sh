@@ -26,3 +26,10 @@ resultDictionary[result1]=$result1
 resultDictionary[result2]=$result2
 resultDictionary[result3]=$result3
 resultDictionary[result4]=$result4
+
+# READ VALUES FROM DICTIONARY IN ARRAY
+for (( i=0; i<${#resultDictionary[@]}; i++ ))
+do
+	resultArray[i]=${resultDictionary[result$(( i+1 ))]}
+done
+
