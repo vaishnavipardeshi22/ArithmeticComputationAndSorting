@@ -15,3 +15,7 @@ result2=`echo "scale=2; $input1 * $input2 + $input3" | bc`
 
 # THIRD COMPUTATION FOR [ c + a / b ]
 result3=`echo "scale=2; $input3 + $input1 / $input2" | bc`
+
+# FOURTH COMPUTATION FOR [ a % b + c ]
+result4=`echo "$input1 % $input2 + $input3" | bc`
+
