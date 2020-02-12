@@ -19,3 +19,10 @@ result3=`echo "scale=2; $input3 + $input1 / $input2" | bc`
 # FOURTH COMPUTATION FOR [ a % b + c ]
 result4=`echo "$input1 % $input2 + $input3" | bc`
 
+# DECLARE DICTIONARY AND STORE COMPUTATION RESULTS IN DICTIONARY
+declare -A resultDictionary
+
+resultDictionary[result1]=$result1
+resultDictionary[result2]=$result2
+resultDictionary[result3]=$result3
+resultDictionary[result4]=$result4
