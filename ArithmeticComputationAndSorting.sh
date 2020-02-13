@@ -40,7 +40,7 @@ function descendingSort()
 	do
 		for(( j=0; j<${#resultArray[@]}-1; j++ ))
 		do
-			if (( $(echo "${resultArray[j+1]} > ${resultArray[j]}" |bc -l) ))
+			if (( $(echo "${resultArray[j+1]} > ${resultArray[j]}" | bc -l) ))
 			then
 				temp=${resultArray[j]}
 				resultArray[j]=${resultArray[j+1]}
@@ -53,3 +53,24 @@ function descendingSort()
 
 #FUNCTION CALL FOR SORTING IN DECENDING ORDER
 descendingSort ${resultArray[@]}
+
+#FUNCTION SORTING RESULTS IN ASCENDING ORDER
+function ascendingSort()
+{
+	for(( i=0; i<${#resultArray[@]}; i++ ))
+	do
+		for(( j=0; j<${#resultArray[@]}-1; j++ ))
+		do
+			if (( $(echo "${resultArray[j+1]} < ${resultArray[j]}" | bc -l) ))
+			then
+				temp=${resultArray[j]}
+				resultArray[j]=${resultArray[j+1]}
+				resultArray[j+1]=$temp
+			fi
+		done
+	done
+	echo ${resultArray[@]}
+}
+
+#FUNCTION CALL FOR SORTING IN ASCENDING ORDER
+ascendingSort ${resultArray[@]}
